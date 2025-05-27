@@ -42,4 +42,39 @@
 
 2. Open the Unity Hub, press Add -> Add project from disk -> add unity_project folder
 
-3. Ensure that the 
+3. Ensure that the Unity Project opens up to the "New Scene" Scene which consists of the following components:
+    - Directional Light
+    - OVRCameraRig
+    - MetaSmallRoomGround
+    - PCM
+    - vr_video_player
+    - DASHManager
+    - FlatUnityCanvas
+
+4. To test the scene in unity, first set the play mode to use the Meta XR Simulator, then press play, which should open the Meta XR Simulator, which will allow you to test the video player without using a VR headset 
+
+5. If testing on an actual Meta VR headset, go to file -> Build and Run -> Save .apk file -> Install .apk file on headset -> Open and test .apk file on VR Headset
+
+## Other notes
+
+### FFmpeg
+- For FFmpeg, the command I used to convert the 3 source videos to 1 .mpd file was
+    ```
+    ffmpeg \
+    -i 144p.mp4 \
+    -i 360p.mp4 \
+    -i 720p.mp4 \
+    -map 0 -b:v:0 250k \
+    -map 1 -b:v:1 800k \
+    -map 2 -b:v:2 2500k \
+    -use_template 1 -use_timeline 1 \
+    -seg_duration 2 \
+    -f dash output_video.mpd
+    ```
+
+### Video Player
+- If you look at the video player components, the video source is from the local server's URL to the manifest video file (in DASHManager script), which satisfies the requirement of the video being stored on a server and not locally
+- Additionally, all of the scripts are commented and explained: DASHManager, SafetyFactorDisplay, VRVideoController
+
+### Safety Factor Slider
+- This slider was added to basically replicate your internet speed slowing down, the lower it is, the worse the quality it is. For me testing it, 144p would be at like sf = 0.01, 360p would be at like sf = 0.09, and anything above that would be 720p, so it is not the best, but it does work to replicate "slow" internet
