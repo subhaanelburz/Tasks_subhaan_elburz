@@ -18,8 +18,8 @@ The dash_workspace/dash is where we will set up the python http server, the unit
 ## Installing Prerequisites
 
 - Unity:
-    - Install using the Unity Hub which can be found here: https://unity.com/download
-    - Then open Unity Hub, add installs, and choose latest 2022.3.x version with the modules stated earlier
+    - Install using the Unity Hub, which can be found here: https://unity.com/download
+    - Then open Unity Hub, add installs, and choose the latest 2022.3.x version with the modules stated earlier
 - Python (using WSL Ubuntu terminal):
     ```
     sudo apt update
@@ -44,7 +44,7 @@ The dash_workspace/dash is where we will set up the python http server, the unit
 
 2. Open the Unity Hub, press Add -> Add project from disk -> add unity_project folder
 
-3. Ensure that the Unity Project opens up to the "New Scene" Scene which consists of the following components:
+3. Ensure that the Unity Project opens up to the "New Scene" Scene, which consists of the following components (Found in Assets/Scenes/New Scene):
     - Directional Light
     - OVRCameraRig
     - MetaSmallRoomGround
@@ -53,7 +53,7 @@ The dash_workspace/dash is where we will set up the python http server, the unit
     - DASHManager
     - FlatUnityCanvas
 
-4. To test the scene in unity, first set the play mode to use the Meta XR Simulator, then press play, which should open the Meta XR Simulator, which will allow you to test the video player without using a VR headset 
+4. To test the scene in Unity, first set the play mode to use the Meta XR Simulator, then press play, which should open the Meta XR Simulator, which will allow you to test the video player without using a VR headset 
 
 5. If testing on an actual Meta VR headset, go to file -> Build and Run -> Save .apk file -> Install .apk file on headset -> Open and test .apk file on VR Headset
 
@@ -79,4 +79,4 @@ The dash_workspace/dash is where we will set up the python http server, the unit
 - Additionally, all of the scripts are commented and explained: DASHManager, SafetyFactorDisplay, VRVideoController
 
 ### Safety Factor Slider
-- This slider was added to basically replicate your internet speed slowing down, the lower it is, the worse the quality it is. For me testing it, 144p would be at like sf = 0.01, 360p would be at like sf = 0.09, and anything above that would be 720p, so it is not the best, but it does work to replicate "slow" internet
+- This slider was added to basically replicate your internet speed slowing down, the lower it is, the worse the quality it is. For me, testing it, 144p would be at like sf = 0.01, 360p would be at like sf = 0.09, and anything above that would be 720p, so it is not the best, but it does work to replicate "slow" internet
