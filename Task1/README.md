@@ -1,5 +1,7 @@
 # Task 1: VR Video Player that plays videos streamed by a server
 
+The dash_workspace/dash is where we will set up the python http server, the unity_project is the actual Unity Project for this task, the three C# files are the commented code files, and the sample_log.txt is a sample log file that will be produced when you test the task (the actual log.txt will be saved in the Assets folder when running).
+
 ## Prerequisites
 
 - Unity 2022.3.x LTS installed with the following modules to run the Unity Project: (REQUIRED)
